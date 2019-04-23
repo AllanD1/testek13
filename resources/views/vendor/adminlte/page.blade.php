@@ -58,7 +58,15 @@
                     
                     <ul class="nav navbar-nav">
                         <li>
-                            <a>Boa noite <strong>Allan</strong> </a>
+                        <a> 
+                            @php
+                                $hour = date('H');
+                                echo ($hour >= 6 &&  $hour < 12) ? "Bom dia " :
+                                    ($hour >= 12 &&  $hour < 18) ? "Boa tarde " :
+                                    "Boa noite ";
+        
+                            @endphp 
+                            <strong>{{ mb_substr( auth()->user()->name, 0, mb_strpos( auth()->user()->name, ' ' ) ) }}</strong> </a>
                         </li>
                         <li>
                             @if(config('adminlte.logout_method') == 'GET' || !config('adminlte.logout_method') && version_compare(\Illuminate\Foundation\Application::VERSION, '5.3.0', '<'))

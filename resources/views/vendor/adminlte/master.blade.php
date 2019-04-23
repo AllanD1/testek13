@@ -14,10 +14,15 @@
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/font-awesome/css/font-awesome.min.css') }}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/Ionicons/css/ionicons.min.css') }}">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     @if(config('adminlte.plugins.select2'))
         <!-- Select2 -->
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css">
+    @endif
+
+  
+    @if(config('adminlte.plugins.datepicker'))
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     @endif
 
     <!-- Theme style -->
@@ -49,6 +54,50 @@
 @if(config('adminlte.plugins.select2'))
     <!-- Select2 -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+@endif
+
+@if(config('adminlte.plugins.datepicker'))
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script>
+        $(function(){
+
+            $('#reservation').daterangepicker({
+                                                "locale": {
+                                                    "format": "DD/MM/YYYY",
+                                                    "separator": " - ",
+                                                    "applyLabel": "Aplicar",
+                                                    "cancelLabel": "Cancelar",
+                                                    "fromLabel": "De",
+                                                    "toLabel": "Até",
+                                                    "customRangeLabel": "Custom",
+                                                    "daysOfWeek": [
+                                                        "Dom",
+                                                        "Seg",
+                                                        "Ter",
+                                                        "Qua",
+                                                        "Qui",
+                                                        "Sex",
+                                                        "Sáb"
+                                                    ],
+                                                    "monthNames": [
+                                                        "Janeiro",
+                                                        "Fevereiro",
+                                                        "Março",
+                                                        "Abril",
+                                                        "Maio",
+                                                        "Junho",
+                                                        "Julho",
+                                                        "Agosto",
+                                                        "Setembro",
+                                                        "Outubro",
+                                                        "Novembro",
+                                                        "Dezembro"
+                                                    ],
+                                                    "firstDay": 0
+                                                }});
+        })
+    </script>
 @endif
 
 @if(config('adminlte.plugins.datatables'))
