@@ -10,6 +10,9 @@
     "require": {
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
+        "google/recaptcha": "^1.2",
+        "jeroennoten/laravel-adminlte": "^1.25",
+        "koenhoeijmakers/laravel-argon2": "^1.1",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0"
     },
