@@ -124,7 +124,7 @@
             </section>
 
             <!-- Main content -->
-            <section class="content">
+            <section style="overflow:hidden;" class="content">
 
                 @yield('content')
 
